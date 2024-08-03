@@ -4,7 +4,7 @@ const fs = require("fs");
 const app = express();
 const PORT = 3000;
 
-// Middleware untuk menangani permintaan ke folder CSS tanpa menyebutkan nama file
+// Middleware untuk menangani permintaan ke folder CSS tanpa menyebutkan nama file ( masih ada bug sepertinya)
 app.use("/css", (req, res, next) => {
   const cssPath = path.join(__dirname, "css", "bootstrap.min.css");
   fs.readFile(cssPath, (err, data) => {
@@ -20,7 +20,7 @@ app.use("/css", (req, res, next) => {
 // Set folder static untuk JavaScript dan file lain
 app.use("/js", express.static(path.join(__dirname, "js")));
 
-// Routing untuk halaman utama
+// Routing untuk jalankan ke halaman utama
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });

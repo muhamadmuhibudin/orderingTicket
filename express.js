@@ -9,7 +9,7 @@ app.use("/css", (req, res, next) => {
   const cssPath = path.join(__dirname, "css", "bootstrap.css");
   fs.readFile(cssPath, (err, data) => {
     if (err) {
-      res.status(404).send("CSS file not found");
+      res.status(404).send("CSS file tidak ada");
     } else {
       res.set("Content-Type", "text/css");
       res.send(data);

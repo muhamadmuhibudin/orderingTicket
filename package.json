@@ -1,6 +1,18 @@
 {
+  "name": "project-ticket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "express.js",
+  "scripts": {
+    "start": "node express.js",
+    "dev": "nodemon express.js"
+  },
   "dependencies": {
     "express": "^4.19.2",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
+

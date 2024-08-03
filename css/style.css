@@ -1,0 +1,9 @@
+.navbar {
+    position: sticky;
+    padding-left: 12px;
+    background-color: aqua;
+}
+
+body {
+    background-color:black ;
+}

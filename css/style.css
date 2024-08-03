@@ -1,9 +1,32 @@
 .navbar {
     position: sticky;
+    top: 0;
     padding-left: 12px;
     background-color: aqua;
+    transition: border-bottom 0.3s ease;
+}
+
+.navbar h1 {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px; 
+    width: 0;
+    height: 5px;
+    background-color: violet;
+    transition: width 0.3s ease; 
+}
+
+.navbar h1:hover::after {
+    width: 100%;
 }
 
 body {
-    background-color:black ;
+    background-color:rgb(79, 81, 43) ;
+    padding-bottom: 1500px;
 }

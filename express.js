@@ -64,6 +64,9 @@ app.use("/js", (req, res, next) => {
     res.status(404).send("File not found");
   }
 });
+
+app.use("/images", express.static(path.join(__dirname, "images")));
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });

@@ -1,100 +1,181 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: auto;
+  background: linear-gradient(45deg, #1c1c1c, #383838, #1c1c1c);
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+/* masih ada sedikit bug dalam gradient body nya */
+
 /* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 7%;
-    background-color: rgba(32, 32, 103, 0.8); 
-    border-bottom: 1px solid rgb(255, 255, 255);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 7%;
+  background-color: rgba(32, 32, 103, 0.8);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
-.navbar.active{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 7%;
-    background-color: rgba(32, 32, 103, 0.8); 
-    border-bottom: 1px solid rgb(255, 255, 255);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin-top: 20px;
-    z-index: 9999;
-    animation: slideIn 0.5s ease-out forwards;
+.navbar.active {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 7%;
+  background-color: rgba(32, 32, 103, 0.8);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 20px;
+  z-index: 9999;
+  animation: slideIn 0.5s ease-out forwards;
 }
 
 .navbar .navbar-nav .underline {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    background-color: var(--primary, rgb(105, 92, 201));
-    transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--primary, rgb(105, 92, 201));
+  transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
 }
 
-
-/* case ketika slide in aktiv dia gak mau mendekat ke top, dia default dari ease out  */
+/* case ketika scroll aktiv dia gak mau mendekat ke top, dia default dari ease out  */
 
 @keyframes slideIn {
-   0% { transform: translateY(-100%); }
-          100% { transform: translateY(0); }
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-.navbar .navbar-logo {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: antiquewhite;
-    font-style: italic;
+.navbar .navbar-brand {
+  font-weight: bold;
+  font-size: 40px;
+  font-style: arial;
 }
 
-.navbar .navbar-logo span {
-    color: rgb(132, 75, 5);
-    font-weight: 600;
+.navbar .navbar-toggler {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: antiquewhite;
+  font-style: italic;
+}
+
+.navbar .navbar-toggler span {
+  color: rgb(132, 75, 5);
+  font-weight: 600;
 }
 
 .navbar .navbar-nav a {
-    color: aliceblue;
-    display: inline-block;
-    font-size: 1rem;
-    margin: 0 1rem;
+  color: aliceblue;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0 1rem;
 }
 
 .navbar .navbar-nav a:hover {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .navbar .navbar-nav a::after {
-    content: '';
-    display: block;
-    padding: 0.5rem;
-    border-bottom: 0.1rem solid var(--primary);
-    transform: scaleX(0);
-    transition: 0.2s linear;
-    /* text-decoration-color: aqua; */
+  content: "";
+  display: block;
+  padding: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
 }
 
 .navbar .navbar-nav a:hover::after {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .navbar .navbar-extra a {
-    color: white;
-    margin: 0 0.5rem;
+  color: white;
+  margin: 0 0.5rem;
 }
 
 .navbar .navbar-extra a:hover {
-    color: var(--primary);
+  color: var(--primary);
 }
 
+.navbar .navbar-right {
+  color: aliceblue;
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-decoration: none;
+}
 /* akhir dari navbar awal */
 
-body {
-    background-color:rgb(135, 145, 56) ;
-    padding-bottom: 1500px;
-    margin: 0;
+/* mulai container */
+.container {
+  flex: 1;
+  padding-top: 120px;
+  padding-bottom: 200px;
 }
+
+/* akhir container */
+
+/* mulai search form dalam kontainer awal */
+.search-form {
+  max-width: 600px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.search-form input,
+.search-form select,
+.search-form button {
+  width: calc(100% - 20px);
+  margin: 10px 0;
+  padding: 10px;
+}
+.search-form button {
+  background-color: #00509e;
+  color: white;
+  border: none;
+}
+.search-form button:hover {
+  background-color: #003366;
+}
+/* akhir search form dalam kontainer awal */
+
+/* footer */
+.footer {
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 10px 0;
+  font-size: 12px;
+  color: aliceblue;
+  background-color: rgb(105, 92, 201);
+}
+/* akhir footer */

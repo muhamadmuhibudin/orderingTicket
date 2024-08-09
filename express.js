@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const app = express();
-const PORT = 5500;
+const PORT = 5500 ;
 
 app.use("/css", (req, res, next) => {
   const cssFiles = [
@@ -67,11 +67,15 @@ app.use("/js", (req, res, next) => {
 
 app.use("/images", express.static(path.join(__dirname, "images")));
 
+app.use("/pembelian", express.static(path.join(__dirname, "pembelian")));
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.get("/pembelian", (req, res) => {
+  res.sendFile(path.join(__dirname, "pembelian.html"));
+});
 
 // ---------------------------- //
 // ARSIP BUAT KODINGAN //

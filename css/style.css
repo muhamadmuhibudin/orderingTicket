@@ -1,12 +1,18 @@
 body {
-  margin: 0;
   display: flex;
   flex-direction: column;
   min-height: auto;
   background: linear-gradient(45deg, #1c1c1c, #383838, #1c1c1c);
-  background-size: 200% 200%;
-  animation: gradientAnimation 10s ease infinite;
+  background-size: 100% 200%;
+  animation: gradientAnimation 5s ease infinite;
+  min-height: 100vh;
+  padding: 0.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  color: #222;
 }
+
+  
 
 @keyframes gradientAnimation {
   0% {
@@ -173,9 +179,103 @@ body {
 .footer {
   text-align: center;
   justify-content: center;
-  padding-bottom: 10px 0;
+  padding-bottom: 10px 0px;
   font-size: 12px;
   color: aliceblue;
-  background-color: rgb(105, 92, 201);
+  background-color: rgba(32, 32, 103, 0.8);
+  width: 100%;
+
 }
 /* akhir footer */
+
+/* dark mode  */
+
+
+.arrow-btn {
+  flex-shrink: 0;
+  width: 2.7rem;
+  height: 2.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  background-color: #222;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* .arrow-btn:before {
+  content: '→';
+} */
+
+input[type='checkbox'] {
+  display: none;
+}
+input[type='checkbox']:checked ~ .dark-mode-mask {
+  transform: scale(50);
+}
+input[type='checkbox']:checked ~ .toggle-btn {
+  background-color: #fff;
+}
+.dark-mode-mask, .toggle-btn {
+  position: fixed;
+  bottom: 1rem;  
+  right: 1rem;   
+  width: 2.5rem;   
+  height: 2.5rem;  
+  border-radius: 50%;
+}
+.toggle-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+  color: orange;
+  background-color: #222;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.5s;
+  will-change: background-color;
+}
+.toggle-btn:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: inherit;
+  animation: pulse 1s infinite linear;
+  pointer-events: none;
+}
+.dark-mode-mask {
+  pointer-events: none;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  transition: all 0.5s ease-in-out;
+  will-change: transform;
+  top: 100%;     
+  left: 100%;    
+  width: 20%; 
+  height: 20%;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #222a;
+  }
+  40% {
+    box-shadow: 0 0 0 0.1rem #2222;
+    opacity: 0.7;
+  }
+  80% {
+    box-shadow: 0 0 0 0.15rem #2222;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* akhir dark mode */

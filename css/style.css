@@ -233,7 +233,7 @@ input[type='checkbox']:checked ~ .toggle-btn {
   background-color: #222;
   cursor: pointer;
   z-index: 1;
-  transition: all 0.5s;
+  /* transition: all 0.5s; */
   will-change: background-color;
 }
 .toggle-btn:before {

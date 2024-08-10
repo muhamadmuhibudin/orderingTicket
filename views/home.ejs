@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIKOL | PEMESANAN TIKET ONLINE TERPERCAYA</title>
+    <link rel="icon" href="images/OIP.png" type="image/png" />
+
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap.rtl.css" />
+    <link rel="stylesheet" href="/css/bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-grid.rtl.css" />
+    <link rel="stylesheet" href="/css/bootstrap-grid.rtl.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-reboot.rtl.css" />
+    <link rel="stylesheet" href="/css/bootstrap-reboot.rtl.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-utilities.css" />
+    <link rel="stylesheet" href="/css/bootstrap-utilities.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-utilities.rtl.css" />
+    <link rel="stylesheet" href="/css/bootstrap-utilities.rtl.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar ps-2 navbar-expand-lg">
+      <a class="navbar-brand" href="#">TIKOL</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Fitur</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pembelian.html">Pemesanan</a>
+          </li>
+        </ul>
+        <a class="navbar-right" href="#">
+          <p>Login/Register</p>
+        </a>
+      </div>
+    </nav>
+    <!-- AKHIR NAVBAR -->
+    <div class="container">
+      <div class="search-form">
+        <h2>Cari Tiket</h2>
+        <form>
+          <label for="origin">Kota Asal</label>
+          <input
+            type="text"
+            id="origin"
+            name="origin"
+            placeholder="Masukkan kota asal"
+          />
+
+          <label for="destination">Kota Tujuan</label>
+          <input
+            type="text"
+            id="destination"
+            name="destination"
+            placeholder="Masukkan kota tujuan"
+          />
+
+          <label for="departure">Tanggal Keberangkatan</label>
+          <input type="date" id="departure" name="departure" />
+
+          <label for="type">Jenis Tiket</label>
+          <select id="type" name="type">
+            <option value="pesawat">Tiket Pesawat</option>
+            <option value="kereta">Tiket Kereta</option>
+            <option value="bus">Tiket Bus</option>
+          </select>
+
+          <button type="submit">Cari Tiket</button>
+        </form>
+      </div>
+    </div>
+<!-- untuk merubah menjadi mode gelap dan terang -->
+
+<input id="toggle-btn" type="checkbox">
+<label class="toggle-btn" for="toggle-btn">Mode</label>
+<div class="dark-mode-mask"></div>
+
+<!-- untuk merubah menjadi mode gelap dan terang -->
+    
+    <footer class="footer">
+      <p>&copy 2018 TIKOL All Rights reserved</p>
+      <p>&copy 2018 TIKOL Hak cipta dilindungi undang undang</p>
+    </footer>
+
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/bootstrap.esm.js"></script>
+    <script src="/js/bootstrap.esm.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

@@ -145,6 +145,9 @@ body {
   flex: 1;
   padding-top: 120px;
   padding-bottom: 200px;
+  width: 100%;
+  margin: 0;
+  border-radius: 5px;
 }
 
 /* akhir container */
@@ -169,6 +172,10 @@ body {
   background-color: #00509e;
   color: white;
   border: none;
+  border-radius: 5px; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  transition: background-color 0.5s;
 }
 .search-form button:hover {
   background-color: #003366;

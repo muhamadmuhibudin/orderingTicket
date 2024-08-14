@@ -1,3 +1,11 @@
+html,
+body {
+  margin: 0;
+  padding: auto;
+  height: 100%;
+  /* overflow: hidden; */
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -12,6 +20,16 @@ body {
   color: #222;
 }
 
+label {
+  padding: 10px;
+}
+
+button.btn-submit {
+  color: white;
+  background: rgba(32, 32, 103, 0.8);
+  margin-top: 15px;
+  border-radius: 10px;
+}
 
 @keyframes gradientAnimation {
   0% {
@@ -140,64 +158,79 @@ body {
 }
 /* akhir dari navbar awal */
 
-/* mulai container */
+/* masuk container baru */
 .container {
-  flex: 1;
-  padding-top: 120px;
-  padding-bottom: 200px;
-  width: 100%;
-  margin: 0;
-  border-radius: 5px;
-  background: antiquewhite;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 9px;
+  margin-top: 120px;
+  padding-top: 25px;
+  padding-bottom: 90px;
+  margin-bottom: 900px;
+  background: aliceblue;
 }
 
-/* akhir container */
-
-/* mulai search form dalam kontainer awal */
 .search-form {
-  max-width: 600px;
-  margin: 20px auto;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  flex-direction: row;
+  height: 350px;
+  gap: 10px;
+}
+
+.form-container {
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px 12px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin: 12px 12px;
+  opacity: 0; /* Awalnya transparan */
+  transform: translateX(0px) translateY(0); /* Awalnya bergeser ke kiri */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  width: 250px;
+  height: 300px;
   background: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 210px;
 }
-.search-form input,
-.search-form select,
-.search-form button {
-  width: calc(100% - 20px);
-  margin: 10px 0;
-  padding: 10px;
+
+#container1 {
+  opacity: 1;
+  transform: translateX(0);
+  display: flex; /* Container pertama selalu muncul */
+  padding: 10px 10px 10px 10px;
 }
-.search-form button {
-  background-color: #00509e;
-  color: white;
-  border: none;
-  border-radius: 5px; 
-  padding: 10px 20px; 
-  cursor: pointer; 
-  transition: background-color 0.5s;
+
+.form-container.show1 {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(255px) translateY(-310px);
+  display: flex;
 }
-.search-form button:hover {
-  background-color: #003366;
+.form-container.show2 {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(510px) translateY(-620px);
+  display: flex;
 }
-/* akhir search form dalam kontainer awal */
+/* akhir container baru */
 
 /* footer */
 .footer {
   text-align: center;
   justify-content: center;
-  padding-bottom: 10px 0px;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
   font-size: 12px;
   color: aliceblue;
   background-color: rgba(32, 32, 103, 0.8);
   width: 100%;
-
 }
 /* akhir footer */
 
 /* dark mode  */
-
 
 .arrow-btn {
   flex-shrink: 0;
@@ -215,21 +248,22 @@ body {
   content: '→';
 } */
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   display: none;
 }
-input[type='checkbox']:checked ~ .dark-mode-mask {
+input[type="checkbox"]:checked ~ .dark-mode-mask {
   transform: scale(50);
 }
-input[type='checkbox']:checked ~ .toggle-btn {
+input[type="checkbox"]:checked ~ .toggle-btn {
   background-color: #fff;
 }
-.dark-mode-mask, .toggle-btn {
+.dark-mode-mask,
+.toggle-btn {
   position: fixed;
-  bottom: 1rem;  
-  right: 1rem;   
-  width: 2.5rem;   
-  height: 2.5rem;  
+  bottom: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
 }
 .toggle-btn {
@@ -241,11 +275,11 @@ input[type='checkbox']:checked ~ .toggle-btn {
   background-color: #222;
   cursor: pointer;
   z-index: 1;
-  transition: all 0.5s; 
+  transition: all 0.5s;
   will-change: background-color;
 }
 .toggle-btn:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -263,9 +297,9 @@ input[type='checkbox']:checked ~ .toggle-btn {
   mix-blend-mode: difference;
   transition: all 0.5s ease-in-out;
   will-change: transform;
-  top: 100%;     
-  left: 100%;    
-  width: 20%; 
+  top: 100%;
+  left: 100%;
+  width: 20%;
   height: 20%;
 }
 

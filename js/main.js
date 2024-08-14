@@ -25,3 +25,33 @@ document.addEventListener("DOMContentLoaded", function () {
     underline.style.width = "0";
   });
 });
+
+// untuk penambahan container muncul ke kanan ketika di input
+
+document.getElementById("origin").addEventListener("input", function () {
+  const originValue = document.getElementById("origin").value;
+  const destinationValue = document.getElementById("destination").value;
+
+  if (originValue && !destinationValue) {
+    document.getElementById("container2").classList.add("show1");
+    document.getElementById("container3").classList.remove("show2");
+  } else if (originValue && destinationValue) {
+    document.getElementById("container2").classList.add("show1");
+    document.getElementById("container3").classList.add("show2");
+  } else {
+    document.getElementById("container2").classList.remove("show1");
+    document.getElementById("container3").classList.remove("show2");
+  }
+});
+
+document.getElementById("destination").addEventListener("input", function () {
+  const destinationValue = document.getElementById("destination").value;
+
+  if (destinationValue) {
+    document.getElementById("container3").classList.add("show2");
+  } else {
+    document.getElementById("container3").classList.remove("show2");
+  }
+});
+
+// selesai container

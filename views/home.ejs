@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="/css/bootstrap-utilities.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-utilities.rtl.css" />
     <link rel="stylesheet" href="/css/bootstrap-utilities.rtl.min.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
+    <link rel="stylesheet" href="/css/styleejs.css" />
   </head>
 
   <body>
@@ -57,43 +58,52 @@
       </div>
     </nav>
     <!-- AKHIR NAVBAR -->
+
     <div class="container">
       <div class="search-form">
-        <h2>Cari Tiket</h2>
-        <form>
-          <label for="origin">Kota Asal</label>
-          <input
-            type="text"
-            id="origin"
-            name="origin"
-            placeholder="Masukkan kota asal"
-          />
+        <br><h2>Cari Tiket</h2>
+        <form id="ticketForm">
+          <!-- Container Pertama -->
+          <div class="form-container" id="container1">
+            <label for="origin">Kota Asal</label>
+            <input
+              type="text"
+              id="origin"
+              name="origin"
+              placeholder="Masukkan kota asal"
+            />
 
-          <label for="destination">Kota Tujuan</label>
-          <input
-            type="text"
-            id="destination"
-            name="destination"
-            placeholder="Masukkan kota tujuan"
-          />
+            <label for="destination">Kota Tujuan</label>
+            <input
+              type="text"
+              id="destination"
+              name="destination"
+              placeholder="Masukkan kota tujuan"
+            />
+          </div>
 
-          <label for="departure">Tanggal Keberangkatan</label>
-          <input type="date" id="departure" name="departure" />
+          <!-- Container Kedua -->
+          <div class="form-container" id="container2">
+            <label for="departure">Tanggal Keberangkatan</label>
+            <input type="date" id="departure" name="departure" />
 
-          <label for="departure">Tanggal Kepulangan</label>
-          <input type="date" id="homecoming" name="homecoming" />
+            <label for="homecoming">Tanggal Kepulangan</label>
+            <input type="date" id="homecoming" name="homecoming" />
+          </div>
 
-          <label for="type">Jenis Tiket</label>
-          <select id="type" name="type">
-            <option value="kereta">Tiket Kereta</option>
-            <!-- <option value="pesawat">Tiket Pesawat</option>
-            <option value="bus">Tiket Bus</option> -->
-          </select>
+          <!-- Container Ketiga -->
+          <div class="form-container" id="container3">
+            <label for="type">Jenis Tiket</label>
+            <select id="type" name="type">
+              <option value="kereta">Tiket Kereta</option>
+            </select>
 
-          <button type="submit">Cari Tiket</button>
+            <button type="submit">Cari Tiket</button>
+          </div>
         </form>
       </div>
     </div>
+
     <!-- untuk merubah menjadi mode gelap dan terang -->
 
     <input id="toggle-btn" type="checkbox" />
@@ -107,12 +117,39 @@
       <p>&copy 2018 TIKOL Hak cipta dilindungi undang undang</p>
     </footer>
 
+    <script>
+       document.getElementById("origin").addEventListener("input", function () {
+      const originValue = document.getElementById("origin").value;
+      const destinationValue = document.getElementById("destination").value;
+
+      if (originValue && !destinationValue) {
+        document.getElementById("container2").classList.add("show");
+        document.getElementById("container3").classList.remove("show");
+      } else if (originValue && destinationValue) {
+        document.getElementById("container2").classList.add("show");
+        document.getElementById("container3").classList.add("show");
+      } else {
+        document.getElementById("container2").classList.remove("show");
+        document.getElementById("container3").classList.remove("show");
+      }
+    });
+
+    document.getElementById("destination").addEventListener("input", function () {
+      const destinationValue = document.getElementById("destination").value;
+
+      if (destinationValue) {
+        document.getElementById("container3").classList.add("show");
+      } else {
+        document.getElementById("container3").classList.remove("show");
+      }
+    });
+    </script>
     <script src="/js/bootstrap.bundle.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/bootstrap.esm.js"></script>
     <script src="/js/bootstrap.esm.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/bootstrap.js"></script>
-    <script src="/js/main.js"></script>
+    <!-- <script src="/js/main.js"></script> -->
   </body>
 </html>

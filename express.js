@@ -34,6 +34,7 @@ app.use("/css", (req, res, next) => {
     "bootstrap-utilities.rtl.css",
     "bootstrap-utilities.rtl.min.css",
     "style.css",
+    "styleejs.css",
   ];
 
   const requestedFile = req.url.split("/").pop();

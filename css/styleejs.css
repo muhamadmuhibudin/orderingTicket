@@ -140,48 +140,55 @@ body {
 }
 /* akhir dari navbar awal */
 
-/* mulai container */
-.container {
-  flex: 1;
-  padding-top: 120px;
-  padding-bottom: 200px;
-  width: 100%;
-  margin: 0;
-  border-radius: 5px;
-  background: antiquewhite;
-}
+/* masuk container baru */
+ .container {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 120px;
+      padding-top: 25px;
+      padding-bottom: 200px;
+      background:antiquewhite;
+    }
 
-/* akhir container */
+    .search-form {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      height: 230px; 
+    }
 
-/* mulai search form dalam kontainer awal */
-.search-form {
-  max-width: 600px;
-  margin: 20px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.search-form input,
-.search-form select,
-.search-form button {
-  width: calc(100% - 20px);
-  margin: 10px 0;
-  padding: 10px;
-}
-.search-form button {
-  background-color: #00509e;
-  color: white;
-  border: none;
-  border-radius: 5px; 
-  padding: 10px 20px; 
-  cursor: pointer; 
-  transition: background-color 0.5s;
-}
-.search-form button:hover {
-  background-color: #003366;
-}
-/* akhir search form dalam kontainer awal */
+    .form-container {
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-right: 10px;
+      margin-left: 12px;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      display: none; /* Mulanya tersembunyi */
+      height: 350px;
+      background: white;
+    }
+
+    #container1 {
+      opacity: 1;
+      transform: translateX(0);
+      display: flex; /* Container pertama selalu muncul */
+      padding: 10px 10px 10px 10px;
+    }
+
+    .form-container.show {
+      opacity: 1;
+      transform: translateX(0);
+      display: flex; /* Tampilkan container saat class "show" ditambahkan */
+    }
+/* akhir container baru */
+
+
+
 
 /* footer */
 .footer {

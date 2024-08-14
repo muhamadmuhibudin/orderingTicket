@@ -98,7 +98,7 @@
               <option value="kereta">Tiket Kereta</option>
             </select>
 
-            <button type="submit">Cari Tiket</button>
+            <button class="btn-submit" type="submit">Cari Tiket</button>
           </div>
         </form>
       </div>
@@ -118,19 +118,19 @@
     </footer>
 
     <script>
-       document.getElementById("origin").addEventListener("input", function () {
+        document.getElementById("origin").addEventListener("input", function () {
       const originValue = document.getElementById("origin").value;
       const destinationValue = document.getElementById("destination").value;
 
       if (originValue && !destinationValue) {
-        document.getElementById("container2").classList.add("show");
-        document.getElementById("container3").classList.remove("show");
+        document.getElementById("container2").classList.add("show1");
+        document.getElementById("container3").classList.remove("show2");
       } else if (originValue && destinationValue) {
-        document.getElementById("container2").classList.add("show");
-        document.getElementById("container3").classList.add("show");
+        document.getElementById("container2").classList.add("show1");
+        document.getElementById("container3").classList.add("show2");
       } else {
-        document.getElementById("container2").classList.remove("show");
-        document.getElementById("container3").classList.remove("show");
+        document.getElementById("container2").classList.remove("show1");
+        document.getElementById("container3").classList.remove("show2");
       }
     });
 
@@ -138,9 +138,9 @@
       const destinationValue = document.getElementById("destination").value;
 
       if (destinationValue) {
-        document.getElementById("container3").classList.add("show");
+        document.getElementById("container3").classList.add("show2");
       } else {
-        document.getElementById("container3").classList.remove("show");
+        document.getElementById("container3").classList.remove("show2");
       }
     });
     </script>

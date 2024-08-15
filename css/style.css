@@ -10,9 +10,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: auto;
-  background: linear-gradient(45deg, #1c1c1c, #383838, #1c1c1c);
+  background: linear-gradient(45deg, #1c1c1c, #2c2c2c, #383838, #2c2c2c, #1c1c1c);
   background-size: 100% 200%;
-  animation: gradientAnimation 5s ease infinite;
+  animation: gradientAnimation 7s ease infinite;
   min-height: 100vh;
   padding: 0.5rem;
   align-items: center;

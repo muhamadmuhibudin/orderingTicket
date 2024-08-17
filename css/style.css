@@ -288,7 +288,7 @@ input[type="checkbox"]:checked ~ .toggle-btn {
   height: 100%;
   background-color: inherit;
   border-radius: inherit;
-  animation: pulse 1s infinite linear;
+  animation: pulse 10s infinite linear;
   pointer-events: none;
 }
 .dark-mode-mask {
